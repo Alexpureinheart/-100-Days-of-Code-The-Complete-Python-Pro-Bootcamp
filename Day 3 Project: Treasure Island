@@ -1,0 +1,62 @@
+print(r'''
+ _                                     _     _                 _ 
+| |                                   (_)   | |               | |
+| |_ _ __ ___  __ _ ___ _   _ _ __ ___ _ ___| | __ _ _ __   __| |
+| __| '__/ _ \/ _` / __| | | | '__/ _ \ / __| |/ _` | '_ \ / _` |
+| |_| | |  __/ (_| \__ \ |_| | | |  __/ \__ \ | (_| | | | | (_| |
+ \__|_|  \___|\__,_|___/\__,_|_|  \___|_|___/_|\__,_|_| |_|\__,_|
+*******************************************************************************
+          |                   |                  |                     |
+ _________|________________.=""_;=.______________|_____________________|_______
+|                   |  ,-"_,=""     `"=.|                  |
+|___________________|__"=._o`"-._        `"=.______________|___________________
+          |                `"=._o`"=._      _`"=._                     |
+ _________|_____________________:=._o "=._."_.-="'"=.__________________|_______
+|                   |    __.--" , ; `"=._o." ,-"""-._ ".   |
+|___________________|_._"  ,. .` ` `` ,  `"-._"-._   ". '__|___________________
+          |           |o`"=._` , "` `; .". ,  "-._"-._; ;              |
+ _________|___________| ;`-.o`"=._; ." ` '`."\ ` . "-._ /_______________|_______
+|                   | |o ;    `"-.o`"=._``  '` " ,__.--o;   |
+|___________________|_| ;     (#) `-.o `"=.`_.--"_o.-; ;___|___________________
+____/______/______/___|o;._    "      `".o|o_.--"    ;o;____/______/______/____
+/______/______/______/_"=._o--._        ; | ;        ; ;/______/______/______/_
+____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
+/______/______/______/______/____"=._o._; | ;_.--"o.--"_/______/______/______/_
+____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
+/______/______/______/______/______/______/______/______/______/______/_____ /
+*******************************************************************************
+''')
+print("Yarrr Matey! Welcome to Treasure Island. Ha harrr!")
+print("Yer mission be ta find the treasure. Many have tried, none have succeeded!")
+print("Ye find yerself upon the shore 'o' the fabled Treasure Island.")
+print("Gettin' yer barrings ye decide ta go in direction.")
+
+direction = input("Where shall ye go? Choose \"left\" or \"right\" ").lower()
+if direction == "left":
+    print("Blow me down! Ye find yerself at the side of a rocky craig. Arr.")
+    print("It's too steep ta climb, mark my words any attempt would be the end of ya!")
+    print("The cliff extends to the water line.")
+    action = input("Ye can \"inspect\" the craig or try to \"swim\" around to the other side! Arr! ").lower()
+    if action == "inspect":
+        print("Lo' and behold upon examining the cliff face three magic doors appear!")
+        choice = input("One \"red\", one \"blue\", one \"yellow\"... Which will ye choose? ").lower()
+        if choice == "red":
+            print("Diddly dee a room of fire for ye! Ye be burned to a crisp!")
+            print("Game Over")
+        elif choice == "blue":
+            print("A room full of hungry beasts awaits ye! Arrr! Ye be dinner!")
+            print("Game Over")
+        elif choice == "yellow":
+            print("By black beard's goat, you've found the treasure!")
+            print("They'll be singin' chanties about ye for generations!")
+            print("You Win!")
+        else:
+            print("Arrr I've had enough with thee!")
+            print("You have been shot by the narrator's blunderbuss.")
+            print("Game Over")
+    else:
+        print("Alas! Eaten by a shark! Ta Davy Jone's locker wit ye!")
+        print("Game Over")
+else:
+    print("Shiver me timbers! Ye been attacked by ravenous sea birds!")
+    print("Game Over")
