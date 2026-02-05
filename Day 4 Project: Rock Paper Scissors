@@ -1,0 +1,46 @@
+import random
+
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+choice_list = [rock, paper, scissors]
+user_input = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n"))
+if user_input < 0 or user_input > 2:
+    print("You must enter a number between 0 and 2")
+else:
+    user_choice = choice_list[user_input]
+    print(user_choice)
+    computer_choice = random.choice(choice_list)
+    print(f"Computer chose:\n{computer_choice}")
+    if user_choice == computer_choice:
+        print("It's a draw!")
+    elif ((user_choice == rock and computer_choice == paper) or
+          (user_choice == paper and computer_choice == scissors) or
+            (user_choice == scissors and computer_choice == rock)):
+        print("You lose")
+    else:
+        print("You win")
