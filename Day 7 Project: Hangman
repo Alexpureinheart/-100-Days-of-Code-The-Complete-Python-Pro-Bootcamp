@@ -1,0 +1,58 @@
+import random
+import hangman_words
+import hangman_art
+
+stages = hangman_art.stages
+
+word_list = hangman_words.word_list
+
+print(hangman_art.logo)
+
+lives = 6
+print(stages[lives])
+chosen_word = random.choice(word_list)
+# print(chosen_word)
+
+placeholder = ""
+word_length = len(chosen_word)
+for position in range(word_length):
+    placeholder += "_"
+print(placeholder)
+
+
+display = ""
+guess_list = []
+
+while "_" in placeholder:
+
+    guess = input("Guess a letter: ").lower()
+
+    if guess in guess_list:
+        print(f"You chose {guess}. You have already guessed this letter. Try again!")
+    elif guess not in chosen_word:
+        print(f"You chose {guess}. That letter is not in the word. You lose a life.")
+        lives -= 1
+    guess_list.append(guess)
+    # print(guess_list)
+    display = ""
+
+    for letter in chosen_word:
+        if letter in guess_list:
+            display += letter
+        else:
+            display += "_"
+
+    print(display)
+    print(stages[lives])
+    placeholder = display
+
+    print(f"****************************{lives}/6 LIVES LEFT****************************")
+
+    if lives <= 0:
+        break
+
+if lives <= 0:
+    print(f"Game Over, You lose! The correct word was: \"{chosen_word}\"")
+else:
+    print(f"You win! You guessed the word: \"{chosen_word}\" Game Over")
+
